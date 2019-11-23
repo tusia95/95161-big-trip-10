@@ -299,7 +299,7 @@ render(tripEventsElement, createEventListContainer(), `beforeend`);
 
 const eventsListElement = tripEventsElement.querySelector(`.trip-events__list`);
 
-
+// 3 tasks
 new Array(TASK_COUNT)
 .fill(``)
 .forEach(

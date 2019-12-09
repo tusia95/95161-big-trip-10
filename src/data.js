@@ -119,11 +119,5 @@ const generateEvent = () => {
   };
 };
 
-/*const generateEvents = (num) => {
-  return new Array(num)
-    .fill(``)
-    .map(generateEvent);
-};*/
-
-
 export {generateEvent};
+

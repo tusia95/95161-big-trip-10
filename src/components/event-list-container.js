@@ -10,5 +10,3 @@ export const createEventListContainer = (event) => {
       </li>
             </ul>`);
 };
-
-// "${event.fullDate.year}-${event.fullDate.month}-${event.fullDate.day}"

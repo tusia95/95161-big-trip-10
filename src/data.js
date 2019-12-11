@@ -5,13 +5,13 @@ const MIN_DESC = 1;
 const MAX_DESC = 3;
 const MIN_PRICE = 10;
 const MAX_PRICE = 500;
-
+let eventCounter = 0;
 
 const TIME_ARR = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
-const MIN_OPTIONS = 1;
 const MAX_OPTIONS = 2;
-// const TASK_NUMBER = 3;
-const MONTHS_NAME = [`JAN`, `FEB`, `MAR`, `APR`, `MAY`, `JUN`, `JUL`, `AUG`, `SEP`, `OCT`, `NOV`, `DEC`];
+const PHOTO_NUM = 5;
+
+
 const eventType = {
   'taxi': `img/icons/taxi.png`,
   'bus': `img/icons/bus.png`,
@@ -32,6 +32,8 @@ const eventDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing eli
 let descriptionArr = eventDescription.split(`.`);
 
 const cityNames = [`Amsterdam`, `Geneva`, `Zurich`, `Saint-Petersburg`];
+
+export const filterNames = [`Everything`, `Future`, `Past`];
 
 const generateEventType = () => {
   let randomType = eventTypes[Math.floor(Math.random() * eventTypes.length)];
@@ -94,9 +96,20 @@ const generateOption = () => {
 
 
 const generateOptions = () => {
-  return new Array(Math.floor(MIN_OPTIONS + Math.random() * (MAX_OPTIONS - MIN_OPTIONS)))
+  return new Array(Math.floor(Math.random() * (MAX_OPTIONS + 1)))
     .fill(``)
     .map(generateOption);
+};
+
+
+const generatePhoto = () => {
+  return `http://picsum.photos/300/150?r=${Math.random()}`;
+};
+
+const generatePhotoArr = (photoNum) => {
+  return new Array(photoNum)
+  .fill(``)
+  .map(generatePhoto);
 };
 
 const generateEvent = () => {
@@ -106,15 +119,14 @@ const generateEvent = () => {
   return {type: evType,
     icon: eventType[evType],
     cityName: generateCityName(),
-    photo: `http://picsum.photos/300/150?r=${Math.random()}`,
+    photos: generatePhotoArr(PHOTO_NUM),
     description: generateDescription(),
     startTime: generateTime()[0],
     endTime: generateTime()[1],
-    date: `${MONTHS_NAME[randDate.month]} ${randDate.day}`,
-    fullDate: `${randDate.year}/${randDate.month}/${randDate.day}`,
-    endDate: `${MONTHS_NAME[randDate.month]} ${randDate.day}`,
+    date: randDate,
     price: evtPrice,
-    options: generateOptions()
+    options: generateOptions(),
+    counter: eventCounter + 1
 
   };
 };

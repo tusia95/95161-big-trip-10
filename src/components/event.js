@@ -1,5 +1,5 @@
 
-
+import {tripDuration} from "../main";
 export const createEventCardTemplate = (event) => {
   return (`  <li class="trip-events__item">
     <div class="event">

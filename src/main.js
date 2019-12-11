@@ -10,7 +10,7 @@ import {filterNames} from "./data";
 
 
 const TASK_COUNT = 3;
-const MONTH_NAMES = [`JAN`, `FEB`, `MAR`, `APR`, `MAY`, `JUN`, `JUL`, `AUG`, `SEP`, `OCT`, `NOV`, `DEC`]
+const MONTH_NAMES = [`JAN`, `FEB`, `MAR`, `APR`, `MAY`, `JUN`, `JUL`, `AUG`, `SEP`, `OCT`, `NOV`, `DEC`];
 let priceArr = [];
 let eventArr = [];
 for (let i = 0; i <= TASK_COUNT; i++) {
